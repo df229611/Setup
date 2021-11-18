@@ -1,0 +1,88 @@
+MySQL - база данных
+
+sudo apt update
+sudo apt install mysql‐server
+sudo mysql_secure_installation
+
+sudo mysql
+SELECT user,authentication_string,plugin,host FROM mysql.user;
+
+В этом примере ваш пользователь root использует аутентификацию с помощью плагина auth_socket. Для изменения этой настройки на использование пароля используйте следующую команду ALTER USER. Не забудьте изменить password на ваш сильный пароль:
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '!DEAD229611ad';
+FLUSH PRIVILEGES;
+
+Проверьте методы авторизации для пользователей ещё раз для того, чтобы убедиться, что пользователь root более не использует плагин auth_socket для авторизации:
+
+SELECT user,authentication_string,plugin,host FROM mysql.user;
+
+Как можно видеть на представленном выводе теперь root пользователь MySQL аутентифицируется с использованием пароля. После того, как мы в этом убедились, можно выйти из оболочки MySQL:
+
+Далее создайте нового пользователя и задайте для него надёжный пароль:
+
+CREATE USER 'sammy'@'localhost' IDENTIFIED BY ' password ';
+
+Далее задайте для пользователя подходящий набор привилегий. Например, вы можете дать пользователю доступ ко всем таблицами в базе данных, а также права на добавление, изменение и удаление пользовательских привилегий следующей командой:
+
+GRANT ALL PRIVILEGES ON *.* TO 'sammy'@'localhost' WITH GRANT OPTION;
+
+exit
+
+
+NODEJS MYSQL
+
+npm install mysql
+
+const mysql = require("mysql");
+const connection = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "123456",
+    database: "mydb"
+});
+
+//Создаем базу данных
+connection.query("CREATE DATABASE mydb", function (err, result) {
+    if (err) throw err;
+    console.log("Database created");
+});
+
+//Удаляем базу данных
+connection.query("DROP DATABASE mydb", function (err, result) {  
+    if (err) throw err;
+    console.log("Database remove");
+});
+
+//Создание таблицы
+let sql = "CREATE TABLE customers(id INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(255) NOT NULL, age INT NOT NULL, address VARCHAR(255))";
+connection.query(sql, function(err, result){
+    if(err) throw err;
+    console.log("Create table");
+});
+
+//Добавление данных в таблицу
+sql = "INSERT INTO customers (name, age, address) VALUES ('Denis','35'. 'Harkiv')";
+connection.query(sql, function(err, result){
+    if(err) throw err;
+});
+
+//Обновление данных в таблице
+sql = "UPDATE customers SET address='Moscow' WHERE name='Denis'";
+connection.query(sql, function(err, result){
+    if(err) throw err;
+    console.log("update:"+result.affectedRows);
+});
+
+//Удаление данных из таблицы
+sql = "DELETE FROM customers WHERE name='Denis'";
+connection.query(sql, function(err, result){
+    if(err) throw err;
+    console.log("delete: "+result.affectedRows);
+});
+
+//Получение данных из таблицы с сортировкой по name
+sql = "SELECT * FROM customers ORDER BY name";
+connection.query(sql, function(err, result, fields){
+    if(err) throw err;
+    console.log(result);
+});

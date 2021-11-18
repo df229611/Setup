@@ -1,0 +1,11 @@
+/// Install
+
+sudo add-apt-repository ppa:inkscape.dev/stable-daily
+sudo apt-get update
+sudo apt-get install inkscape
+
+/// Remove
+
+sudo apt-get remove inkscape
+sudo apt-add-repository --remove ppa:inkscape.dev/stable-daily
+sudo apt-get update

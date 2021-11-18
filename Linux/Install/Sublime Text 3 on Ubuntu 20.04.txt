@@ -1,0 +1,81 @@
+/// Install
+
+sudo apt update
+sudo apt install dirmngr gnupg apt-transport-https ca-certificates software-properties-common
+curl -fsSL https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+sudo add-apt-repository "deb https://download.sublimetext.com/ apt/stable/"
+sudo apt install sublime-text
+
+
+/// Install packege
+
+Вариант 1
+
+1) Мышкой текст выделяем и нажимаем ctr + c или правой кнопкой мыши.
+
+Ссылка для Package Control: https://packagecontrol.io/installation
+
+2) В редакторе Sublime Text 3 нажать на View затем Show Console
+
+3) Вставить скопированный текст из первого шага
+
+Вариант 2
+
+1) Скачать файл https://packagecontrol.io/Package%20Control.sublime-package
+
+2) В редакторе Sublime Text 3 выбрать в меню Preferences затем Browse Packages и в открывшейся папке нажать кнопку назад, чтобы попасть в папку уровнем выше и найти папку Installed Packages
+
+3) Закинуть в папку Installed Packages скаченный файл Package Control.sublime-package
+
+4) Перезапустить Sublime Text 3
+
+5) В меню Preferences выбираем Package Control вводим Install Package и устанавливаем плагины для Sublime Text 3
+
+
+Лучшие плагины для Sublime Text 3
+https://habrahabr.ru/post/235901/
+
+Emmet
+
+   Один из самых популярных плагинов для редакторов. Emmet, бывший Zen Coding, является также одним из самых значительных методов повышения продуктивности веб-разработчиков. После нажатия на табуляцию Emmet преобразует простые сокращения в объемные фрагменты кода для HTML и CSS. Хочется еще поделиться плагином Hayaku — коллекцию удобных аббревиатур для каскадных стилей. 
+
+Git
+
+   Суть этого плагина понятна из названия — возможность работать с Git прямо в вашем любимом редакторе. Данный способ работы с Git позволит вам сэкономить массу времени. Во-первых: вам не придется постоянно переключаться между окнами Sublime и терминала. Во-вторых: есть грамотный автокомплит и вместо git add -A, достаточно написать add. В-третьих: существуют такие мелочи как Quick commit, который одной командой quick добавляет все изменения и коммитит их. Если от Git вам необходима возможность только забирать содержимое с удаленных репозиториев, то с этой задачей прекрасно справляется Fetch. Существует еще Glue, который выводит внизу небольшое окошко, где можно писать на Shell. Благодаря этому из редактора теперь будет доступен не только Git… GitGutter и Modific Данные плагины подсвечивают строки измененные последним коммитом, другими словами diff tools в режиме реального времени.
+
+BracketHighlighter
+
+   Мега круто! Открытие и закрытие любого фрагмента в коде должно выглядеть именно таким образом. 
+
+EditorConfig
+
+   Суть этого плагина заключается в том, чтобы предоставить возможность разработчиком иметь единый формат настроек для всех редакторов/IDE и всех языков программирования. Файлы .editorconfig хранят в себе информацию о табуляции, ширине отступа, кодировке и прочих конфигурациях. 
+
+AllAutocomplete
+
+   Классическое автодополнение в Sublime Text работает только с текущим файлом. AllAutocomplete осуществляет поиск по всем файлам открытым в текущем окне, что значительно упрощает процесс разработки. Также 
+   существует плагин CodeIntel, который воплощает в себе возможности IDE и помимо умного автокомплита привносит в Sublime «Code Intelligence» для ряда языков: JavaScript, Mason, XBL, XUL, RHTML,    SCSS, Python, HTML, Ruby, Python3, XML, Sass, XSLT, Django, HTML5, Perl, CSS, Twig, Less, Smarty, Node.js, Tcl, TemplateToolkit, PHP.
+
+SublimeREPL
+
+   Вероятно, один из самых полезных плагинов для разработчиков. SublimeREPL позволяет прямо в редакторе интерпретировать целое множество языков: Clojure, CoffeeScript, F#, Groovy, Haskell, Lua, MozRepl, NodeJS, Python, R, Ruby, Scala, shell.
+
+DocBlockr
+
+   DocBlockr станет для вас эффективным помощником при документировании кода. 
+   После ввода /** и нажатия на клавишу Tab плагин автоматически распарсит любую функцию и подготовит соответствующий шаблон.
+
+AutoFileName
+
+   Автозаполнение путей к подключаемым файлам — очень удобно. Без лишних слов. 
+
+ColorPicker
+
+   Обычно, когда нам требуется цветовая палитра мы привыкли использовать Photoshop или Gimp. Но полноценный color picker может быть прямо в окне вашего редактора — Ctrl/Cmd + Shift + C. А еще есть замечательные GutterColor и ColorHighlighter, которые упрощают ориентирование 
+   в цветовых кодах: 
+
+MarkdownEditing
+
+   Вероятно лучший плагин для работы с Markdown: подсветка, сокращения, автодополнение, цветовые схемы и др. Как альтернативно решение, можно попробовать MarkdownPreview.
+
+

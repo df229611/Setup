@@ -1,0 +1,13 @@
+/// Install
+
+sudo apt-get install software-center
+
+/// Empty dash
+
+rm ~/.cache/software-center -R
+unity --replace &
+
+/// Remove
+
+sudo apt-get remove software-center
+sudo apt-get update

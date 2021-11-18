@@ -1,0 +1,37 @@
+/// Install
+
+sudo add-apt-repository ppa:docky-core/stable
+sudo apt-get update
+sudo apt-get install plank
+
+/// Remove
+
+sudo apt-get remove plank
+sudo apt-get remove libplank-common
+sudo apt-add-repository --remove ppa:docky-core/stable
+sudo apt-get update
+
+/// Install
+
+sudo add-apt-repository ppa:ricotz/docky
+sudo apt-get update
+sudo apt-get install plank
+
+/// Remove
+
+sudo apt-get remove plank
+sudo apt-get remove libplank-common
+sudo apt-add-repository --remove ppa:ricotz/docky
+sudo apt-get update
+
+/// Preferences plank
+
+plank --preferences
+
+/// Add to autostart
+
+sudo ln -s /usr/share/applications/plank.desktop /etc/xdg/autostart/
+
+/// Remove from autostart
+
+sudo rm -f /etc/xdg/autostart/plank.desktop

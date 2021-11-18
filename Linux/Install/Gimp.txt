@@ -1,0 +1,11 @@
+/// Install
+
+sudo add-apt-repository ppa:otto-kesselgulasch/gimp-edge
+sudo apt-get update
+sudo apt-get install gimp
+
+/// Remove
+
+sudo apt-get remove gimp
+sudo apt-add-repository --remove ppa:otto-kesselgulasch/gimp-edge
+sudo apt-get update

@@ -1,0 +1,26 @@
+/// Install
+
+sudo add-apt-repository ppa:alessandro-strada/ppa
+sudo apt update
+sudo apt install google-drive-ocamlfuse
+
+/// Create disk
+
+mkdir ~/google-drive
+
+/// Mount disk
+google-drive-ocamlfuse ~/google-drive/
+
+/// Multiple accounts
+
+google-drive-ocamlfuse -label label [mountpoint]
+
+/// Unmount disk
+
+fusermount -u ~/google-drive
+
+/// Remove
+
+sudo apt-get remove google-drive-ocamlfuse
+sudo apt-add-repository --remove ppa:alessandro-strada/ppa
+sudo apt-get update

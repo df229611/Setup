@@ -1,0 +1,11 @@
+/// Install
+
+sudo add-apt-repository ppa:videolan/master-daily
+sudo apt-get update
+sudo apt-get install vlc
+
+/// Remove
+
+sudo apt-get remove vlc
+sudo apt-add-repository --remove ppa:videolan/master-daily
+sudo apt-get update

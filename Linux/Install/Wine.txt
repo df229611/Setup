@@ -1,0 +1,16 @@
+/// Install
+
+sudo add-apt-repository ppa:ubuntu-wine/ppa
+sudo apt-get update
+sudo apt-get install wine-stable
+
+
+/// Remove All
+
+sudo apt-get purge wine
+sudo apt-get autoremove
+sudo apt-get clean
+sudo apt-get install -f
+rm -r ~/.wine
+rm -r ~/.local/share/applications/wine/Программы
+rm -rf ~/.local/share/applications/wine*

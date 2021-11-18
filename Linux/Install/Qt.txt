@@ -1,0 +1,14 @@
+/// Install
+
+sudo apt-get update
+sudo apt-get install qtcreator
+sudo apt-get install qt5-default
+
+/// Install examples
+
+sudo apt-get install qtbase5-examples qtdeclarative5-examples
+
+/// Remove
+
+sudo apt-get remove qtcreator qt5-default
+sudo apt-get update

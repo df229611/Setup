@@ -1,0 +1,8 @@
+/// Install
+
+sudo apt-get install libsfml-dev
+
+/// Remove
+
+sudo apt-get remove libsfml-dev
+sudo apt-get update

@@ -1,0 +1,11 @@
+/// Install
+
+sudo add-apt-repository ppa:pdfmod-team/ppa
+sudo apt-get update
+sudo apt-get install pdfmod
+
+/// Remove
+
+sudo apt-get remove pdfmod
+sudo apt-add-repository --remove ppa:pdfmod-team/ppa
+sudo apt-get update

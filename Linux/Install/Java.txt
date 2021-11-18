@@ -1,0 +1,34 @@
+/// Install
+
+sudo apt update
+java -version
+apt install default-jre
+javac -version
+sudo apt install default-jdk
+
+/// Your First Java Program
+
+mkdir MyJavaDirectory
+cd MyJavaDirectory
+gedit MyFirstProgram.java
+
+/// Then copy the following code in your file:
+
+class MyFirstProgram {
+
+    public static void main(String args[]){
+        System.out.println("Hello World!");
+    }
+}
+
+javac MyFirstProgram.java
+java MyFirstProgram
+
+/// How to set up Sublime text 3 to run and compile java on linux?
+/// Make your own sublime-build system, and enter this code:
+
+{
+   "shell_cmd": "javac \"$file\" && java \"$file_base_name\"",
+   "file_regex": "^(...*?):([0-9]*):?([0-9]*)",
+   "selector": "source.java",
+}

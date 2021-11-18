@@ -1,0 +1,11 @@
+/// Install
+
+sudo add-apt-repository ppa:nilarimogard/webupd8
+sudo apt-get update
+sudo apt-get install youtube-viewer
+
+/// Remove
+
+sudo apt-get remove youtube-viewer
+sudo apt-add-repository --remove ppa:nilarimogard/webupd8
+sudo apt-get update

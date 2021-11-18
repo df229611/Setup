@@ -1,0 +1,8 @@
+/// Install
+
+sudo apt-get install gnome-disk-utility
+
+/// Remove
+
+sudo apt-get remove gnome-disk-utility
+sudo apt-get update

@@ -1,0 +1,11 @@
+/// Install
+
+sudo add-apt-repository ppa:mc3man/mpv-tests
+sudo apt update
+sudo apt install mpv
+
+/// Remove
+
+sudo apt-get remove mpv
+sudo apt-add-repository --remove ppa:mc3man/mpv-tests
+sudo apt-get update

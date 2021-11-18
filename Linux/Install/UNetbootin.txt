@@ -1,0 +1,11 @@
+/// Install
+
+sudo add-apt-repository ppa:gezakovacs/ppa
+sudo apt-get update
+sudo apt-get install unetbootin
+
+/// Remove
+
+sudo apt-get remove unetbootin
+sudo apt-add-repository --remove ppa:gezakovacs/ppa
+sudo apt-get update

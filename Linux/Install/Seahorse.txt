@@ -1,0 +1,8 @@
+/// Install
+
+sudo apt-get install seahorse
+
+/// Remove
+
+sudo apt-get remove seahorse
+sudo apt-get update

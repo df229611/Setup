@@ -1,0 +1,11 @@
+/// Install
+
+sudo add-apt-repository ppa:webupd8team/tor-browser
+sudo apt-get update
+sudo apt-get install tor-browser
+
+/// Remove
+
+sudo apt-get remove tor-browser
+sudo apt-add-repository --remove ppa:webupd8team/tor-browser
+sudo apt-get update

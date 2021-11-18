@@ -1,0 +1,8 @@
+/// Install
+
+sudo apt-get install exfat-fuse exfat-utils
+
+/// Remove
+
+sudo apt-get remove exfat-fuse exfat-utils
+sudo apt-get update
