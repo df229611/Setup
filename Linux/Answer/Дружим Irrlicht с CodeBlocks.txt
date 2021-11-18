@@ -1,0 +1,18 @@
+Прежде всего, я рекомендую загрузить все материалы из apt-репозиториев, начиная с Irrlicht:
+
+sudo apt-get update
+sudo apt-get install build-essential libirrlicht-doc libirrlicht-dev \ libxxf86vm-dev libgl1-mesa-dev libxcursor-dev
+
+Если вам нужно скомпилировать связанные с ним вещи, вы также должны установить его зависимости сборки - сначала включите репозитории Исходный код в Программное обеспечение и обновления ( software-properties-gtk ) и затем:
+
+sudo apt-get build-dep libirrlicht-dev
+
+Я рекомендую скомпилировать некоторые примеры. Надеюсь, это неважно - от терминала или от CodeBlocks ... Вы можете начать с официальных учебных пособий.
+
+Ваш пример может быть использован следующим образом:
+
+cp -ar /usr/share/doc/libirrlicht-doc/examples ~/irrlicht-examples
+cd ~/irrlicht-examples/03.CustomSceneNode
+gunzip *.gz
+ln -s /usr/include/irrlicht ../../include
+codeblocks CustomSceneNode.cbp

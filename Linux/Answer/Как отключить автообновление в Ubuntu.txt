@@ -1,0 +1,42 @@
+Иногда на некоторых серверах бывает крайне необходимо отключить автоматическое обновление системы, так как службы собранные из исходного кода под определенное ядро, могут не запустится после его обновления. Для отключения или включения автоматического обновления можно воспользоваться командой:
+
+sudo dpkg-reconfigure -plow unattended-upgrades
+
+Также можно открыть в текстовом редакторе следующий файл:
+
+sudo nano /etc/apt/apt.conf.d/20auto-upgrades
+
+И указать 0 для отключения автоматического обновления:
+
+APT::Periodic::Update-Package-Lists "0";
+APT::Periodic::Unattended-Upgrade "0";
+
+В дальнейшем если потребуется, обновление можно выполнить вручную: 
+
+sudo apt update
+sudo apt upgrade
+
+Если у вас включено автоматическое обновление и вы хотите получать email уведомления при каждом обновление или в случае ошибок, то откроем в текстовом редакторе следующий файл:
+
+sudo nano /etc/apt/apt.conf.d/50unattended-upgrades
+
+И укажем параметры:
+
+Unattended-Upgrade::Mail "test@ixnfo.com";
+//Unattended-Upgrade::MailOnlyOnError "true";
+
+Также в этом файле можно запретить обновление определенных пакетов:
+
+Unattended-Upgrade::Package-Blacklist {
+//	"vim";
+//	"libc6";
+//	"libc6-dev";
+//	"libc6-i686";
+};
+
+Если вы включили автообновление и хотите проверить работает ли оно, то можно выполнить команду:
+
+sudo unattended-upgrades --dry-run –debug
+
+Логи автообновлений пишутся в файл /var/log/unattended-upgrades/unattended-upgrades.log
+

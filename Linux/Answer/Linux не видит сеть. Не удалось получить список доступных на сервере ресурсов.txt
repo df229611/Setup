@@ -1,0 +1,8 @@
+Запускаем редактор и заходим в конфигурационный файл samba
+sudo gedit /etc/samba/smb.conf
+
+Добавляем в секцию [global] следующие строки
+
+workgroup = WORKGROUP
+security = user
+wins support = no

@@ -1,0 +1,27 @@
+Используя APT-GET удалите кеш пакетов:  
+
+sudo apt-get clean
+
+Удалите осиротевшие пакеты:
+
+sudo apt-get autoremove
+
+Обновите список пакетов:
+
+sudo apt-get update
+
+Исправьте зависимости:
+
+sudo apt-get -f install
+
+Если запутались с зависимостями, поможет интеллектуальное обновление системы:
+
+sudo apt-get dist-upgrade
+
+Если установка была прервана, то следует переустановить пакет
+
+sudo apt-get install --reinstall имя_пакета
+   
+Снимаем блокировку с /var/lib/dpkg/:    
+
+sudo fuser -vki /var/lib/dpkg/lock
