@@ -1,0 +1,41 @@
+Новый проект -> Проект без Qt -> Приложение на языке C++ ->
+
+Название: Name project
+Создать в: Folder project
+
+Система сборки: qmake
+
+В файл конфига Name project.pro добавляем библиотеки SFML
+
+LIBS += -lsfml-audio
+LIBS += -lsfml-graphics
+LIBS += -lsfml-network
+LIBS += -lsfml-window
+LIBS += -lsfml-system
+
+В файл main.cpp добавляем код
+
+#include <SFML/Graphics.hpp>
+
+int main(){
+
+	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
+	sf::CircleShape shape(100.f);
+	shape.setFillColor(sf::Color::Green);
+
+	while (window.isOpen()){
+		sf::Event event;
+		while (window.pollEvent(event)){
+			if (event.type == sf::Event::Closed)
+			window.close();
+		}
+
+		window.clear();
+		window.draw(shape);
+		window.display();
+	}
+
+	return 0;
+}
+
+Нажимаем комбинацию кнопок Ctrl+R для компиляции и запуска кода программы!

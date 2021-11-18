@@ -1,0 +1,12 @@
+{
+"cmd": ["mingw32-g++", "-o", "$file_base_name", "$file"],
+"path": "C:\\MinGW\\bin\\",
+"variants": [
+
+    {   
+        "cmd": ["start", "cmd", "/k", "$file_base_name"],
+        "shell": true,
+        "name": "Run"
+    }
+    ]
+}

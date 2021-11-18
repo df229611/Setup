@@ -1,0 +1,74 @@
+Установка стандартной версии JRE/JDK
+Стандартная версия Java, которая поставляется вместе с Ubuntu – самая простая в установке. По умолчанию Ubuntu 20.04 идет с Open JDK 11 (это открытая версия JRE и JDK).
+
+Чтобы установить эту версию, сначала обновите индекс пакетов:
+
+sudo apt update
+
+А затем запросите версию Java (чтобы узнать, установлена ли Java в данной системе):
+
+java -version
+
+Если на вашем сервере Java не установлена, вы увидите такой вывод:
+
+Command 'java' not found, but can be installed with:
+sudo apt install default-jre              # version 2:1.11-72, or
+sudo apt install openjdk-11-jre-headless  # version 11.0.7+10-3ubuntu1
+sudo apt install openjdk-13-jre-headless  # version 13.0.3+3-1ubuntu2
+sudo apt install openjdk-14-jre-headless  # version 14.0.1+7-1ubuntu1
+sudo apt install openjdk-8-jre-headless   # version 8u252-b09-1ubuntu1
+
+Выполните следующую команду, чтобы установить стандартную версию Java Runtime Environment (JRE):
+
+sudo apt install default-jre
+
+Данная команда установит Java Runtime Environment (JRE), что позволит вам запускать почти все программы Java.
+
+Запросите версию установленной программы:
+
+java -version
+
+Вы увидите такой вывод:
+
+openjdk version "11.0.7" 2020-04-14
+OpenJDK Runtime Environment (build 11.0.7+10-post-Ubuntu-3ubuntu1)
+OpenJDK 64-Bit Server VM (build 11.0.7+10-post-Ubuntu-3ubuntu1, mixed mode, sharing)
+
+Кроме JRE вам может понадобиться Java Development Kit (JDK), чтобы скомпилировать и запустить определенное программное обеспечение на базе Java. Чтобы установить JDK, выполните следующую команду:
+
+sudo apt install default-jdk
+
+Убедитесь, что версия JDK установлена, проверив версию javac, компилятора Java:
+
+javac -version
+
+Вы увидите следующий результат:
+
+javac 11.0.7
+
+/// Your First Java Program
+
+mkdir MyJavaDirectory
+cd MyJavaDirectory
+gedit MyFirstProgram.java
+
+/// Then copy the following code in your file:
+
+class MyFirstProgram {
+
+    public static void main(String args[]){
+        System.out.println("Hello World!");
+    }
+}
+
+javac MyFirstProgram.java
+java MyFirstProgram
+
+/// How to set up Sublime text 3 to run and compile java on linux?
+/// Make your own sublime-build system, and enter this code:
+
+{
+   "shell_cmd": "javac \"$file\" && java \"$file_base_name\"",
+   "file_regex": "^(...*?):([0-9]*):?([0-9]*)",
+   "selector": "source.java",
+}

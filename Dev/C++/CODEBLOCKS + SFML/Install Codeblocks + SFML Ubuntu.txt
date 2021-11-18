@@ -1,0 +1,11 @@
+/// Install CodeBlocks
+
+sudo add-apt-repository ppa:damien-moore/codeblocks-stable
+sudo apt update
+sudo apt install codeblocks codeblocks-contrib
+
+/// Install SFML
+
+sudo apt-get install libsfml-dev
+
+

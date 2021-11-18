@@ -1,0 +1,81 @@
+Node.js - программная платформа, основанная на движке V8 (транслирующем JavaScript в машинный код), превращающая JavaScript из узкоспециализированного языка в язык общего назначения.
+
+
+Установка стабильной версии Node.js
+
+sudo apt-get update
+sudo apt-get install nodejs
+sudo apt-get install npm
+
+
+Установка Node.js с помощью PPA
+
+sudo add-apt-repository ppa:chris-lea/node.js
+sudo apt-get update
+sudo apt-get install nodejs
+sudo apt-get install npm
+
+
+Обновление nodejs
+
+sudo npm cache clean -f
+sudo npm install -g n
+sudo n stable
+
+sudo apt-get install -y npm
+
+------------------------------------------------------------------------------
+
+Установка Nodemon
+
+npm install -g nodemon
+npm install --save-dev nodemon
+
+В Sublime Terxt -> Tools - > Build System - > New Build System:
+
+1.
+{
+    "cmd": ["nodemon", "$file"],
+    "selector": "source.js"
+}
+
+2.
+{
+    "cmd": ["nodejs", "$file"],
+    "selector": "source.js"
+}
+3.
+{
+    "cmd": ["node", "$file"],
+    "selector": "source.js"
+}
+
+------------------------------------------------------------------------------
+
+Установка Express
+Создайте каталог для своего приложения и сделайте его своим рабочим каталогом.
+
+mkdir myapp
+cd myapp
+
+С помощью команды npm init создайте файл package.json для своего приложения.
+
+npm init
+
+   Эта команда выдает целый ряд приглашений, например, приглашение указать имя и версию вашего приложения. На данный момент, достаточно просто нажать клавишу ВВОД, чтобы принять предлагаемые значения по умолчанию для большинства пунктов, кроме следующего: entry point: (index.js) Введите app.js или любое другое имя главного файла по своему желанию. Если вас устраивает index.js, нажмите клавишу ВВОД, чтобы принять предложенное имя файла по умолчанию. Теперь установите Express в каталоге app и сохраните его в списке зависимостей. Например:
+
+npm install express --save
+
+   Для временной установки Express, без добавления его в список зависимостей, не указывайте опцию --save:
+
+npm install express
+
+------------------------------------------------------------------------------
+
+Установка Socket.IO Server
+
+npm install socket.io
+
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    <script src="http://your-io-server/socket.io/socket.io.js">
+
