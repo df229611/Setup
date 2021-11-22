@@ -1,0 +1,30 @@
+Делаем программы на C++ Builder переносимыми - основные проблемы...
+1. Как сделать, чтобы пpогpамма на C++ Builder не требовала библиотек .bpl, .dll?
+
+В меню Project, Options, Packages снять опцию Build with runtime packages;
+В меню Project, Options, Linker снять опцию Use dynamic RTL;
+Выполнить Project, Build ИмяПроекта.
+2. А если программа работает с базой данных через BDE?
+
+Самый простой путь (без изготовления полноценного инсталлятора) таков:
+
+Добавить необходимые файлы из папки BDE Builder'а к вашему исполняемому модулю: blw32.dll, idapi32.dll, idr20009.dll, idpdx32.dll для Paradox-таблиц или iddbas32.dll для DBF-таблиц, bantam.dll, charset.cvb, usa.btl возможно, понадобятся ещё какие-то, разместить копии файлов в папке с программой;
+Доступ к таблицам в программе настроить не через псевдонимы (alias'ы), а через пути в файловой системе. При этом, если все таблицы хранятся в папке программы, то указывается только имя таблицы без пути.
+Поставить опции проекта как в вопросе 1. Теоретически программа теперь запускается на любой машине без инсталляции BDE и нечувствительна к смене имени папок, сбоям в BDE и т.п.
+3. Как узнать, какие библиотеки загружает моя программа?
+
+Получить список загруженных модулей (exe, bpl, dll) можно так:
+
+TStringList *lst = (TStringList*)Memo1->Lines;
+lst->Clear();
+char buf [255];
+TLibModule *lbm;
+AnsiString fname, sname, path, drv, dir, name, ext;
+for (lbm = LibModuleList; lbm; lbm = lbm->next) {
+ GetModuleFileName((HMODULE)lbm->instance, buf, 254);
+ fname = AnsiString(buf).Trim().UpperCase();
+ if (!fname.IsEmpty())  lst->Add(AnsiString(int(lbm->instance)) + ": " + fname);
+}
+Здесь список пишется в Memo-поле с именем Memo1.
+
+Архив ZIP с этим примером (3021.zip)
