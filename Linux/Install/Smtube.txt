@@ -1,0 +1,11 @@
+/// Install
+
+sudo add-apt-repository ppa:rvm/smplayer
+sudo apt-get update
+sudo apt-get install smtube
+
+/// Remove
+
+sudo apt-get remove smtube
+sudo apt-add-repository --remove ppa:rvm/smplayer
+sudo apt-get update
