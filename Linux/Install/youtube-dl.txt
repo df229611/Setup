@@ -1,0 +1,8 @@
+/// Install
+
+sudo apt install python-pip
+sudo pip install -U youtube-dl
+sudo -H pip install --upgrade youtube-dl
+
+/// Remove
+
